@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 export const revalidate = 120;
-// Fetching posts with caching for 60 seconds
+
 async function getPosts() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
 
