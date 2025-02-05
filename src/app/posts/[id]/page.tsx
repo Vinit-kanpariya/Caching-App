@@ -12,9 +12,7 @@ interface PageProps {
 
 // Fetch post data with caching
 async function getPost(id: string) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-    next: { revalidate: 120 }, // Full route caching for 120 seconds
-  });
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
 
   if (!res.ok) {
     return notFound();
