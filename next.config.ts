@@ -2,7 +2,7 @@ module.exports = {
     async headers() {
       return [
         {
-          source: '/posts/(.*)',
+          source: '/posts/:id*',
           headers: [
             {
               key: 'Cache-Control',
