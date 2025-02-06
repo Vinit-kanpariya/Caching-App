@@ -10,6 +10,16 @@ interface PageProps {
   }>;
 }
 
+// Generate static params for dynamic routes
+export async function generateStaticParams() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const posts = await res.json();
+
+  return posts.map((post: { id: string }) => ({
+    id: post.id.toString(),
+  }));
+}
+
 // Fetch post data with caching
 async function getPost(id: string) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);

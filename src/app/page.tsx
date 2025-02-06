@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const revalidate = 120;
 
 async function getPosts() {
+  console.log('Fetching posts...');
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
 
   if (!res.ok) {
